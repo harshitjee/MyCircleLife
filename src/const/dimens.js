@@ -1,0 +1,11 @@
+export default dimens = {
+    SPLASH_LOGO_WIDTH: 180,
+    SPLASH_LOGO_HEIGHT: 220,
+    LARGE_DIST: 30,
+    NORMAL_SIZE: 18,
+    VERY_SMALL_SIZE:12,
+    NORMAL_DIS:20,
+    SMALL_DIS:10,
+    MEDIUM_SIZE:14,
+    
+}
