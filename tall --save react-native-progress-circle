@@ -1,0 +1,46 @@
+[1mdiff --git a/src/RootStack.js b/src/RootStack.js[m
+[1mindex 6e264ce..291eb93 100644[m
+[1m--- a/src/RootStack.js[m
+[1m+++ b/src/RootStack.js[m
+[36m@@ -5,6 +5,11 @@[m [mimport {[m
+     createDrawerNavigator,[m
+     createSwitchNavigator[m
+ } from 'react-navigation';[m
+[32m+[m[32mimport React from 'react'[m
+[32m+[m[32mimport {[m
+[32m+[m[32m    View,[m
+[32m+[m[32m    Text[m
+[32m+[m[32m} from 'react-native'[m
+ [m
+ import SplashScreen from './screens/SplashScreen'[m
+ import DashBoardScreen from './screens/DashBoardScreen'[m
+[36m@@ -19,6 +24,14 @@[m [mconst bottomTabNavigator = createBottomTabNavigator([m
+         DiscoverScreen,[m
+         ProfileScreen,[m
+         ShopScreen[m
+[32m+[m[32m    }, {[m
+[32m+[m[32m        tabBarComponent: () => {[m
+[32m+[m[32m            return ([m
+[32m+[m[32m                <View>[m
+[32m+[m[32m                    <Text>Hello</Text>[m
+[32m+[m[32m                </View>[m
+[32m+[m[32m            );[m
+[32m+[m[32m        }[m
+     }[m
+ )[m
+ [m
+[36m@@ -26,7 +39,7 @@[m [mconst drawerNavigator = createStackNavigator({[m
+     bottomTabNavigator[m
+ });[m
+ [m
+[31m-const  switchNavigator = createSwitchNavigator({[m
+[32m+[m[32mconst switchNavigator = createSwitchNavigator({[m
+     SplashScreen,[m
+     drawerNavigator[m
+ }[m
+[36m@@ -35,4 +48,4 @@[m [mconst  switchNavigator = createSwitchNavigator({[m
+ [m
+ [m
+ [m
+[31m-export default RootStack= createAppContainer(switchNavigator)[m
+[32m+[m[32mexport default RootStack = createAppContainer(switchNavigator)[m
