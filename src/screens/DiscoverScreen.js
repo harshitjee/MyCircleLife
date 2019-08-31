@@ -9,8 +9,9 @@ export default class DiscoverScreen extends Component {
     render() {
         return(
         <View>
-            <Text>
-                Discover Screen</Text>
+            <Text
+                    style={{ fontWeight: "bold",color:'#1B87E2' ,fontSize: 22,marginTop:200,paddingHorizontal:50 }}
+                     >Welcome To Discover Screen </Text>
         </View>
         )
     }

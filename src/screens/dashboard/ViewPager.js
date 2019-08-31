@@ -33,12 +33,11 @@ class ViewPager extends React.Component {
       < View style={{backgroundColor:'#FFF'}}>
       <IndicatorViewPager
         style={{height: 150}}
+        autoPlayInterval={2000}
+        autoPlayEnable={true}
         indicator={this._renderDotIndicator()}>
         <View style={[styles.indicatorView]}>
-          <Image source= {banner1} style={{width: deviceWidth-10, height: 120, borderRadius:10,
-           
-       
-        }}></Image>
+          <Image source= {banner1} style={{width: deviceWidth-10, height: 120, borderRadius:10, }} resizeMode='stretch'></Image>
         </View>
 
         <View style={[styles.indicatorView, ]}>
