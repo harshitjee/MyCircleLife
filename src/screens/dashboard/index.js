@@ -39,12 +39,13 @@ class DashBoardScreen extends Component {
   render() {
     //alert(JSON.stringify(this.state));
     return (
-      <PTRView onRefresh={this._refresh} >
+    
       <ScrollView style={{ backgroundColor: '#d9d9d9' }}
       ref={(view) => {
         this.scrollView = view;
       }}
       >
+        <PTRView onRefresh={this._refresh} >
         <View style={{ flexDirection: 'column', marginVertical: 5 }}>
           <ViewPager />
           <CollapibleComponent
@@ -88,7 +89,7 @@ class DashBoardScreen extends Component {
             onAccordionOpen={() => { this.setState({ ...this.state, isPlanCpmOpen: true },()=>{
               setTimeout(() => {
                 this.scrollView.scrollToEnd({ animated: true })
-                }, 500)
+                }, 100)
               
             });
              }}
@@ -109,8 +110,9 @@ class DashBoardScreen extends Component {
           data={this.props.dashBoardData ? this.props.dashBoardData.others : {}} />
 }
         </View>
+        </PTRView>
       </ScrollView>
-      </PTRView>
+     
     );
   }
 }
