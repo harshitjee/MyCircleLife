@@ -27,30 +27,30 @@ export default class Boost extends Component {
                     <View style={{ flexDirection: 'column'}}>
                         <Button bordered rounded color='purple'
                             style={{ height: 35 }}>
-                            <Text>UNLIMITED</Text>
+                            <Text>{this.props.data.summary?(this.props.data.summary.boosts)[0].title:''}</Text>
                         </Button>
                         <Text style={{ 
                             fontSize: 12, fontFamily: "OpenSans-Regular",
-                            alignSelf: 'center', marginTop: 10, color: '#828282' }}>$300/Day</Text>
+                            alignSelf: 'center', marginTop: 10, color: '#828282' }}>{this.props.data.summary?(this.props.data.summary.boosts)[0].price:''}</Text>
                     </View>
                     <View style={{ flexDirection: 'column' }}>
                         <Button bordered rounded warning
                             style={{ height: 35 }}>
-                            <Text>+2.0 GB</Text>
+                            <Text>{this.props.data.summary?(this.props.data.summary.boosts)[1].title:''}</Text>
                         </Button>
                         <Text style={{ 
                             fontSize: 12, fontFamily: "OpenSans-Regular",
-                            alignSelf: 'center', marginTop: 10, color: '#828282' }}>$ 10.00</Text>
+                            alignSelf: 'center', marginTop: 10, color: '#828282' }}>{this.props.data.summary?(this.props.data.summary.boosts)[1].price:''}</Text>
                     </View>
                     <View style={{ flexDirection: 'column' }}>
                         <Button bordered rounded warning
                         
                             style={{ height: 35 }}>
-                            <Text >+1.0 GB</Text>
+                            <Text >{this.props.data.summary?(this.props.data.summary.boosts)[2].title:''}</Text>
                         </Button>
                         <Text style={{ 
                             fontSize: 12, fontFamily: "OpenSans-Regular",
-                            alignSelf: 'center', marginTop: 10, color: '#828282' }}>$ 6.00</Text>
+                            alignSelf: 'center', marginTop: 10, color: '#828282' }}>{this.props.data.summary?(this.props.data.summary.boosts)[1].price:''}</Text>
                     </View>
 
 

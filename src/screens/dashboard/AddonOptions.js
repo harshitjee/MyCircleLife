@@ -20,7 +20,7 @@ export default AddonOptions={
             alignItems: "center",
           }}>
             <Text style={{  fontSize: 15, fontFamily: "OpenSans-Bold", color: '#555555' }}>
-              {" "}ADD - ON OPTIONS
+              {" "}{item.header.value}
             </Text>
             {expanded
               ?  <Image style={{width:18,height:18}} source={ic_minus}/>

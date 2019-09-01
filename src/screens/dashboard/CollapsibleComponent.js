@@ -21,11 +21,13 @@ export default class CollapibleComponent extends Component {
 
 
       <Accordion
-        dataArray={dataArray}
+        dataArray={this.props.data?this.props.data:dataArray}
         animation={true}
         expanded={this.props.expanded}
         renderHeader={this.props.renderHeader}
         renderContent={this.props.renderContent}
+        onAccordionOpen= {this.props.onAccordionOpen}
+        onAccordionClose= {this.props.onAccordionClose}
       />
 
 

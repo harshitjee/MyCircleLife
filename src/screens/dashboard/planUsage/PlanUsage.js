@@ -22,7 +22,7 @@ export default PlanUsage={
             alignItems: "center",
           }}>
             <Text style={{  fontSize: 15, fontFamily: "OpenSans-Bold", color: '#555555' }}>
-              {" "}PLAN USAGE
+              {" "}{item.summary.header.value}
             </Text>
             {expanded
               ? <Image style={{width:18,height:18}} source={ic_minus}/>
@@ -51,9 +51,9 @@ export default PlanUsage={
               }}></Image>
     
               <View style={{ flexDirection: 'column', marginLeft: 20,alignSelf:'center' ,flex:1}}>
-                <Text style={{ color: '#1B85CF', fontFamily: "OpenSans-Bold", fontSize: 14 }}>UNLIMITED DATA </Text>
-                <Text style={{ color: '#262626', fontSize: 13,fontFamily: "OpenSans-Regular" }}>40 GB/40 GB left </Text>
-                <Text style={{ color: '#797979', fontSize: 12 ,fontFamily: "OpenSans-Regular"}}>*This is your data allocation at 4G+ speeds. After consuming this,you will continue to be connected on managed speeds. </Text>
+                <Text style={{ color: '#1B85CF', fontFamily: "OpenSans-Bold", fontSize: 14 }}>{(item.summary.components)[0].title.value}</Text>
+                <Text style={{ color: '#262626', fontSize: 13,fontFamily: "OpenSans-Regular" }}>{(item.summary.components)[0].subtitle.value} </Text>
+                <Text style={{ color: '#797979', fontSize: 12 ,fontFamily: "OpenSans-Regular"}}>{(item.summary.components)[0].description.value}</Text>
               </View>
     
             </View>
@@ -62,7 +62,7 @@ export default PlanUsage={
             <View style = {{alignSelf:'center'}}>
             <View style = {{borderWidth:3,borderColor:'#1F9CF0',borderRadius:75}}>
               <ProgressCircle
-                percent={90}
+                percent={(item.detail.calls.left/item.detail.calls.total)*100}
                 radius={30}
                 
                 style={{alignSelf:'center'}}
@@ -75,9 +75,9 @@ export default PlanUsage={
             </View>
     
               <View style={{ flexDirection: 'column', marginLeft: 20 }}>
-                <Text style={{ color: '#808080',fontFamily: "OpenSans-Bold", fontSize: 14 }}>TALKTIME </Text>
-                <Text style={{ color: '#797979', fontSize: 13 ,fontFamily: "OpenSans-Regular"}}>91 min/100 min left </Text>
-                <Text style={{ color: '#797979', fontSize: 13 ,fontFamily: "OpenSans-Regular"}}>+  0 mins ($ 0.08/min)</Text>
+                <Text style={{ color: '#808080',fontFamily: "OpenSans-Bold", fontSize: 14 }}>{(item.detail.calls_usage.components)[0].title.value} </Text>
+                <Text style={{ color: '#797979', fontSize: 13 ,fontFamily: "OpenSans-Regular"}}>{(item.detail.calls_usage.components)[0].subtitle.value} </Text>
+                <Text style={{ color: '#797979', fontSize: 13 ,fontFamily: "OpenSans-Regular"}}>{(item.detail.calls_usage.components)[0].description.value}</Text>
               </View>
     
             </View>
@@ -86,7 +86,7 @@ export default PlanUsage={
             <View style = {{alignSelf:'center'}}>
             <View style = {{borderWidth:3,borderColor:'#1F9CF0',borderRadius:75}}>
               <ProgressCircle
-                percent={100}
+                 percent={(item.detail.sms.left/item.detail.sms.total)*100}
                 radius={30}
                 
                
@@ -100,9 +100,9 @@ export default PlanUsage={
             </View>
     
               <View style={{ flexDirection: 'column', marginLeft: 20 }}>
-                <Text style={{ color: '#808080',fontFamily: "OpenSans-Bold", fontSize: 14  }}>SMS </Text>
-                <Text style={{ color: '#797979', fontSize: 13 ,fontFamily: "OpenSans-Regular" }}>25 sms/25 sms left </Text>
-                <Text style={{ color: '#797979', fontSize: 13  ,fontFamily: "OpenSans-Regular"}}>+  0 sms ($ 0.05/sms)</Text>
+                <Text style={{ color: '#808080',fontFamily: "OpenSans-Bold", fontSize: 14  }}>{(item.detail.sms_usage.components)[0].title.value} </Text>
+                <Text style={{ color: '#797979', fontSize: 13 ,fontFamily: "OpenSans-Regular" }}>{(item.detail.sms_usage.components)[0].subtitle.value} </Text>
+                <Text style={{ color: '#797979', fontSize: 13  ,fontFamily: "OpenSans-Regular"}}>{(item.detail.sms_usage.components)[0].description.value}</Text>
               </View>
     
             </View>
